@@ -31,7 +31,7 @@ no.addEventListener("click", () => {
     count++;
   } else if (count == 3) {
     gif.src = "./resources/gato-cat.gif";
-    text.innerHTML = "Se te fue la mano, cierto?🥹";
+    text.innerHTML = "Se te fue la mano, cierto?🥺";
     yes.style.height = "70%";
     yes.style.width = "70%";
     no.style.width = "20%";
@@ -44,13 +44,34 @@ no.addEventListener("click", () => {
     no.style.fontSize = "4vh";
     no.style.width = "10%";
     count++;
-  } else if (count == 5) {
-    gif.src = "./resources/sadhamstergirl.gif";// gif credit: https://tenor.com/view/cat-gif-10173437195524493032
-    text.innerHTML = "Por fiss🥺";
-    yes.style.height = "90%";
-    yes.style.width = "96%";
-    no.style.display = "none";
-  }
+
+    const btn = document.querySelector('.no');
+
+    function mover() {
+      const x = Math.random() * 80; // porcentaje de la pantalla
+      const y = Math.random() * 80;
+      btn.style.position = 'absolute';
+      btn.style.left = x + '%';
+      btn.style.top = y + '%';
+    }
+
+    btn.addEventListener('mouseenter', mover);
+
+    // ➜ añadido: huir también al hacer click
+    btn.addEventListener('click', mover);
+
+    
+  } 
+  // else if (count == 5) {
+  //   gif.src = "./resources/sadhamstergirl.gif";// gif credit: https://tenor.com/view/cat-gif-10173437195524493032
+  //   text.innerHTML = "Por fiss🥺";
+  //   yes.style.height = "90%";
+  //   yes.style.width = "96%";
+  //   no.style.display = "none";
+  //  }
+  // referencia al botón
+
+
 });
 
 // changes for when YES button is clicked
